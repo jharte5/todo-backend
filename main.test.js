@@ -25,37 +25,31 @@ beforeEach(() => {
   originalTodos = [
     {
       text: 'Christmas shopping',
-      date: new Date(),
       complete: false,
       priority: 1,
     },
     {
       text: `make doctor's appointment`,
-      date: new Date(),
       complete: true,
       priority: 2,
     },
     {
       text: 'binge watch The Office',
-      date: new Date(),
       complete: false,
       priority: 2,
     },
     {
       text: 'research dinosaurs',
-      date: new Date(),
       complete: false,
       priority: 1,
     },
     {
       text: 'fire Colin',
-      date: new Date(),
       complete: true,
       priority: 2,
     },
     {
       text: 'start novel',
-      date: new Date(),
       complete: true,
       priority: 1,
     },
@@ -153,14 +147,14 @@ describe('getTodoName', () => {
   it(`returns the text property of a todo`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-    date: new Date(),
+    
     complete: false,
     priority: 1,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-    date: new Date(),
+    
     complete: false,
     priority: 2,
   };
@@ -174,14 +168,14 @@ describe('getCompleteness', () => {
   it(`returns the completeness of a todo`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-    date: new Date(),
+    
     complete: false,
     priority: 1,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-    date: new Date(),
+    
     complete: true,
     priority: 2,
   };
@@ -195,14 +189,14 @@ describe('getPriority', () => {
   it(`returns the priority of a todo`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-    date: new Date(),
+    
     complete: false,
     priority: 1,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-    date: new Date(),
+    
     complete: true,
     priority: 2,
   };
@@ -216,14 +210,14 @@ describe('isComplete', () => {
   it(`returns whether the given todo is complete`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-    date: new Date(),
+    
     complete: false,
     priority: 1,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-    date: new Date(),
+    
     complete: true,
     priority: 2,
   };
@@ -237,14 +231,14 @@ describe('isHighPriority', () => {
   it(`returns whether the given todo is of high priority`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-    date: new Date(),
+    
     complete: false,
     priority: 2,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-    date: new Date(),
+    
     complete: true,
     priority: 1,
   };
@@ -295,19 +289,19 @@ describe('justNotComplete', () => {
     const notComplete = [
       {
         text: 'Christmas shopping',
-        date: new Date(),
+        
         complete: false,
         priority: 1,
       },
       {
         text: 'binge watch The Office',
-        date: new Date(),
+        
         complete: false,
         priority: 2,
       },
       {
         text: 'research dinosaurs',
-        date: new Date(),
+        
         complete: false,
         priority: 1,
       },
@@ -327,19 +321,19 @@ describe('justComplete', () => {
     const complete = [
       {
         text: `make doctor's appointment`,
-        date: new Date(),
+        
         complete: true,
         priority: 2,
       },
       {
         text: 'fire Colin',
-        date: new Date(),
+        
         complete: true,
         priority: 2,
       },
       {
         text: 'start novel',
-        date: new Date(),
+        
         complete: true,
         priority: 1,
       },
@@ -359,19 +353,19 @@ describe('priority2Only', () => {
     const highPriority = [
       {
         text: `make doctor's appointment`,
-        date: new Date(),
+        
         complete: true,
         priority: 2,
       },
       {
         text: 'binge watch The Office',
-        date: new Date(),
+        
         complete: false,
         priority: 2,
       },
       {
         text: 'fire Colin',
-        date: new Date(),
+        
         complete: true,
         priority: 2,
       },
@@ -391,19 +385,19 @@ describe('priority1Only', () => {
     const lowPriority = [
       {
         text: 'Christmas shopping',
-        date: new Date(),
+        
         complete: false,
         priority: 1,
       },
       {
         text: 'research dinosaurs',
-        date: new Date(),
+        
         complete: false,
         priority: 1,
       },
       {
         text: 'start novel',
-        date: new Date(),
+        
         complete: true,
         priority: 1,
       },

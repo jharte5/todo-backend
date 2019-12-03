@@ -61,7 +61,9 @@ const isHighPriority = function(todos) {
 
 }
 
-
+const todoNameAndPriority = function (todos) {
+  // return getTodoName() '+' getPriority()
+} 
 
 /***********************
  * ITERATION FUNCTIONS *
@@ -76,8 +78,16 @@ const names = function(todos) {
 
 const namesAndPriorities = function(todos) {
   const newArr = [];
-  todos.forEach(name => newArr.push(getTodoName(name)))
-  todos.forEach(priority => newArr.push(getPriority(priority)))
+  todos.forEach(name => {
+  if(isHighPriority(name)) {
+      newArr.push(name.text + ' - High')
+    } else  {
+      newArr.push(name.text + ' - Low')
+    } 
+  })
+    
+    //  newArr.push(getTodoName(name) + isHighPriority(name)))
+  
   return newArr
 
 }

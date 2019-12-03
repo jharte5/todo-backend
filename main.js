@@ -41,15 +41,24 @@ const getCompleteness = function (todos) {
 
 const getPriority = function (todos) {
   return todos.priority
-  
 }
 
-const isComplete = function() {
-  
+const isComplete = function(todos) {
+  // const newArr = []
+  // todos.forEach(todos =>newArr.getCompleteness(todos) ? newArr.push(todos) : '')
+  // return newArr
+  // if (todos.complete === true) {
+    return todos.complete
+  // }
 }
 
-const isHighPriority = function() {
-  
+const isHighPriority = function(todos) {
+  if (todos.priority === 1) {
+    return false
+  } else if (todos.priority === 2) {
+    return true
+  }
+
 }
 
 
@@ -58,15 +67,26 @@ const isHighPriority = function() {
  * ITERATION FUNCTIONS *
  ***********************/
 
-const names = function() {
-
-}
-
-const namesAndPriorities = function() {
+const names = function(todos) {
+  const newArr = []
+  todos.forEach(text =>newArr.push(getTodoName(text))) 
+  return newArr
   
 }
 
-const justNotComplete = function() {
+const namesAndPriorities = function(todos) {
+  const newArr = [];
+  todos.forEach(name => newArr.push(getTodoName(name)))
+  todos.forEach(priority => newArr.push(getPriority(priority)))
+  return newArr
+
+}
+
+const justNotComplete = function(todos) {
+  const newArr = [];
+  if (todos.complete === false){
+  } newArr.push(todos)
+  todos.forEach(notdone => newArr.push())
   
 }
 

@@ -116,8 +116,8 @@ describe('filter', () => {
 
 describe('twoPileSort', () => {
   it(`returns a new array where elements from the given function that pass the given testing function are put at the beginning, while those who don't are put at the end`, () => {
-    const greetings = ['hi', 'how are you', 'hello'];
-    const fish = ['whale', 'dogfish'];
+    const greetings = ['hi', 'how are you', 'hello', 'you are looking well today'];
+    const fish = ['whale', 'dogfish', 'starfish', 'manta ray', 'here fishy fishy fishy'];
 
     const isShort = function(greeting) {
       return greeting.length < 6;
@@ -127,8 +127,23 @@ describe('twoPileSort', () => {
       return fish.includes('fish')
     }
 
-    expect(twoPileSort(greetings, isShort)).toEqual(['hi', 'hello', 'how are you'])
-    expect(twoPileSort(fish, hasFishInName)).toEqual(['dogfish', 'whale'])
+    const shortGreetingsFirst = twoPileSort(greetings, isShort);
+    const firstLongGreetingIndex = shortGreetingsFirst.findIndex((greeting) => greeting.length >= 6)
+
+    const foundShortGreetingAfter = shortGreetingsFirst.slice(firstLongGreetingIndex)
+      .some((greeting) => greeting.length < 6)
+
+    expect(firstLongGreetingIndex).toBe(2);
+    expect(foundShortGreetingAfter).toBe(false);
+
+    const fishyFishFirst = twoPileSort(fish, hasFishInName);
+    const firstUnfishyFishIndex = fishyFishFirst.findIndex((fish) => !fish.includes('fish'))
+
+    const foundFishyFishAfter = fishyFishFirst.slice(firstUnfishyFishIndex)
+      .some((fish) => fish.includes('fish'))
+
+    expect(firstUnfishyFishIndex).toBe(3);
+    expect(foundFishyFishAfter).toBe(false);
   })
 
   it(`doesn't modify the original array`, () => {
@@ -250,7 +265,7 @@ describe('isHighPriority', () => {
 
 describe('names', () => {
   it(`returns an array of the given todos names`, () => {
-    expect(names(todos)).toBe([
+    expect(names(todos)).toEqual([
       'Christmas shopping',
       `make doctor's appointment`,
       'binge watch The Office',
@@ -268,7 +283,7 @@ describe('names', () => {
 
 describe('namesAndPriorities', () => {
   it(`returns an array of the string containing the given todos name and priority`, () => {
-    expect(namesAndPriorities(todos)).toBe([
+    expect(namesAndPriorities(todos)).toEqual([
       'Christmas shopping - Low',
       `make doctor's appointment - High`,
       'binge watch The Office - High',

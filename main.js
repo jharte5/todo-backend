@@ -100,23 +100,28 @@ const justNotComplete = function(todos) {
   
 }
 
-const justComplete = function() {
+const justComplete = function(todos) {
+  const newArr = []
+  todos.forEach(text =>newArr.push(getCompleteness(text))) 
+  return newArr
   
 }
 
-const priority2Only = function() {
-  
+const priority2Only = function(todos) {
+  const newArr = []
+
 }
 
 const priority1Only = function() {
-  
+  const newArr = []
 }
 
 const notCompleteFirst = function() {
-  
+  const newArr = []
 }
 
 const priority2First = function() {
+  const newArr = []
   
 }
 

@@ -20,8 +20,17 @@ const filter = function() {
 
 }
 
-const twoPileSort = function() {
-  
+const twoPileSort = function(arr, func) {
+  const pass = []
+  const fail = []
+  arr.forEach(function(arr){
+    if (func(arr)) {
+      pass.push(arr)
+    } else {
+      fail.push(arr)
+    }
+  })
+  return [...pass, ...fail]  
 }
 
 
@@ -108,20 +117,20 @@ const justComplete = function(todos) {
 }
 
 const priority2Only = function(todos) {
-  const newArr = []
+  return filter (todos, isHighPriority)
 
 }
 
 const priority1Only = function() {
-  const newArr = []
+  return filter(todos, (arr) => arr.priority === 1)
 }
 
 const notCompleteFirst = function() {
-  const newArr = []
+  return twoPileSort(todos, (arr) => arr.complete === false)
 }
 
 const priority2First = function() {
-  const newArr = []
+  return twoPileSort(todos, (arr)=> arr.priority === 2)
   
 }
 

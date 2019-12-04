@@ -12,12 +12,23 @@ They'll also become easier later once you've written a few of the iteration func
 
 */
 
-const map = function() {
+const map = function(arr, func) {
+  const newArr = [];
+  arr.forEach(function(arr) {
+    newArr.push(func(arr))
+  });
+  return newArr
 
 }
 
-const filter = function() {
-
+const filter = function(arr, func) {
+  const newArr = [];
+  arr.forEach(function(arr){
+    if (func(arr)===true) {
+      newArr.push(arr)
+    }
+  })
+    return newArr
 }
 
 const twoPileSort = function(arr, func) {
@@ -121,15 +132,15 @@ const priority2Only = function(todos) {
 
 }
 
-const priority1Only = function() {
-  return filter(todos, (arr) => arr.priority === 1)
+const priority1Only = function(todos) {
+  return filter(todos, (arr)=> arr.priority === 1)
 }
 
-const notCompleteFirst = function() {
-  return twoPileSort(todos, (arr) => arr.complete === false)
+const notCompleteFirst = function(todos) {
+  return twoPileSort(todos, (arr)=> arr.complete === false)
 }
 
-const priority2First = function() {
+const priority2First = function(todos) {
   return twoPileSort(todos, (arr)=> arr.priority === 2)
   
 }
